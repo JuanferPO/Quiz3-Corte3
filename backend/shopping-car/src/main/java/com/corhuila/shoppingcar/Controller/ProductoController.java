@@ -37,6 +37,10 @@ public class ProductoController {
     public void update(@RequestBody Producto producto, @PathVariable String id) {
         service.update(producto, id);
     }
+    @PutMapping("/delete-logical/{id}")
+    public void deleteLogical(@PathVariable String id) {
+        service.deleteLogical(id);
+    }
     @DeleteMapping("/{id}")
     public void delete(@PathVariable String id) {
         service.delete(id);

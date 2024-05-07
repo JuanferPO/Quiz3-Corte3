@@ -6,6 +6,7 @@ import com.corhuila.shoppingcar.IService.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,5 +58,18 @@ public class ProductoService implements IProductoService {
     @Override
     public void delete(String id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public void deleteLogical(String id) {
+        Optional<Producto> ps = repository.findById(id);
+
+        if (!ps.isEmpty()){
+            Producto productoUpdate = ps.get();
+            productoUpdate.setDeletedAt(LocalDateTime.now());
+            repository.save(productoUpdate);
+        }else{
+            System.out.println("No existe el producto");
+        }
     }
 }

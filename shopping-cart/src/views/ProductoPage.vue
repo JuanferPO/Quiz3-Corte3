@@ -18,7 +18,7 @@
   
           <div> 
              <!--Traer el componente de los botones de la crud  -->
-            <CrudButtonComponent />
+             <CrudButtonComponentProducto />
           </div>         
         </div>
       </ion-content>
@@ -27,10 +27,13 @@
   
   <script setup lang="ts">
   import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import ButtonComponent from '@/components/ButtonComponent.vue';
   import InputComponent from '@/components/InputComponent.vue';
-  import CrudButtonComponent from '@/components/CrudButtonComponent.vue';
-  </script>
+  import CrudButtonComponentProducto from '@/components/CrudButtonComponentProducto.vue';
+  import axios from 'axios';
+// Rutas de la API
+const baseURL = 'http://localhost:8080/shopping_car/api/producto';
+
+</script>
   
   <style scoped src="../theme/container.css"></style>
 

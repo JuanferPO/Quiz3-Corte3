@@ -9,10 +9,8 @@
     <ion-content>
       <div id="login-container">
         <div id="login-form">
-          <InputComponent id="tipoDocumento" name="tipoDocumento" label="Tipo Documento: " />
-          <InputComponent type="number" id="documento" name="documento" label="Documento: " />
+          <InputComponent id="codigo" name="codigo" label="Código: " />
           <InputComponent id="nombre" name="nombre" label="Nombre: " />
-          <InputComponent id="metodoPago" name="metodoPago" label="Método Pago: " />
           <InputComponent id="direccion" name="direccion" label="Dirección: " />
         </div>
         <div>
@@ -39,7 +37,7 @@ import Swal from 'sweetalert2';
 
 
 // Rutas de la API
-const baseURL = 'http://localhost:8080/shopping_car/api/cliente';
+const baseURL = 'http://localhost:8080/shopping_car/api/proveedor';
 
 // Métodos para interactuar con la API
 // Obtener todos los registros
@@ -67,10 +65,8 @@ async function fetchRecordById(id) {
 // Crear registro
 async function createRecord() {
   const data = {
-    tipoDocumento: tipoDocumento.value,
-    documento: documento.value,
+    codigo: codigo.value,
     nombre: nombre.value,
-    metodoPago: metodoPago.value,
     direccion: direccion.value
   };
 

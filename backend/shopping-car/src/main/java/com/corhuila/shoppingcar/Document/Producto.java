@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Document(collection = "producto")
 public class Producto {
@@ -26,6 +27,9 @@ public class Producto {
 
     @Field
     private String marca;
+
+    @Field
+    private LocalDateTime deletedAt;
 
     public String getId() {
         return id;
@@ -73,5 +77,13 @@ public class Producto {
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    public LocalDateTime getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(LocalDateTime deletedAt) {
+        this.deletedAt = deletedAt;
     }
 }
